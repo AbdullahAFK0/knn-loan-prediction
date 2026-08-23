@@ -1,0 +1,156 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#84967e","surface-container-highest":"#353534","on-secondary-container":"#8ac38a","on-tertiary-container":"#626060","on-background":"#e5e2e1","on-error-container":"#ffdad6","surface-container":"#201f1f","tertiary-container":"#dfdcdb","primary-fixed-dim":"#00e639","surface":"#131313","surface-tint":"#00e639","surface-variant":"#353534","tertiary":"#fcf8f8","on-tertiary-fixed":"#1c1b1b","on-primary-container":"#007117","on-error":"#690005","inverse-surface":"#e5e2e1","outline-variant":"#3b4b37","secondary-fixed-dim":"#9bd59a","on-secondary":"#003910","primary-fixed":"#72ff70","secondary-container":"#1b5124","secondary-fixed":"#b6f1b5","on-secondary-fixed":"#002107","on-primary":"#003907","on-primary-fixed":"#002203","error":"#ffb4ab","primary-container":"#00ff41","on-tertiary":"#313030","surface-container-low":"#1c1b1b","surface-bright":"#393939","primary":"#ebffe2","surface-dim":"#131313","on-primary-fixed-variant":"#00530e","inverse-primary":"#006e16","on-secondary-fixed-variant":"#1b5124","surface-container-high":"#2a2a2a","tertiary-fixed-dim":"#c9c6c5","on-tertiary-fixed-variant":"#474646","tertiary-fixed":"#e5e2e1","inverse-on-surface":"#313030","error-container":"#93000a","background":"#131313","secondary":"#9bd59a","surface-container-lowest":"#0e0e0e","on-surface-variant":"#b9ccb2","on-surface":"#e5e2e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","container-max":"1440px","gutter":"16px","unit":"4px","margin-desktop":"32px"},"fontFamily":{"headline-md":["JetBrains Mono"],"body-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["JetBrains Mono"],"headline-sm":["JetBrains Mono"],"code-snippet":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><span class="font-headline-sm text-headline-sm tracking-tighter text-on-surface">KNN_LOAN_PREDICTOR</span><div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-primary uppercase">System Online</span></div></div><nav class="hidden md:flex items-center gap-gutter h-full" data-active-classes="text-primary border-b-2 border-primary"><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">HOME</a><a aria-current="page" class="h-full flex items-center px-2 font-label-lg transition-colors text-primary border-b-2 border-primary" data-path="prediction" href="#">PREDICTION</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="model" href="#">MODEL</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="results" href="#">RESULTS</a></nav><div><button class="font-label-lg text-label-lg bg-secondary-container text-on-secondary-container border border-secondary px-6 py-2 hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">[ RUN PREDICTION ]</button></div></div></header><main class="w-full pt-16 min-h-screen bg-background"><div class="flex flex-col w-full h-full relative overflow-hidden bg-background">
+<!-- Ambient glowing grid background -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="gridPattern" patternunits="userSpaceOnUse" width="40">
+<path class="text-outline-variant opacity-50" d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#gridPattern)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Main Content Area -->
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col gap-12 min-h-[calc(100vh-4rem-6rem)]">
+<!-- Header -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="font-headline-lg text-headline-lg text-primary animate-pulse">></span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">MODEL_EXECUTION_COMPLETE</h1>
+</div>
+<div class="h-px w-full bg-outline-variant relative">
+<div class="absolute left-0 top-0 h-full w-32 bg-primary"></div>
+</div>
+</div>
+<!-- Result Section (Bento layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-grow">
+<!-- Primary Result Card -->
+<div class="lg:col-span-8 flex flex-col border border-primary bg-surface-container shadow-[0_0_20px_rgba(0,230,57,0.15)] relative overflow-hidden group">
+<!-- Scanline effect -->
+<div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] z-20"></div>
+<div class="px-6 py-4 border-b border-primary bg-surface-container-high flex justify-between items-center z-10">
+<span class="font-label-md text-label-md text-primary tracking-widest uppercase">OUTPUT // LOAN_STATUS</span>
+<span class="font-code-snippet text-code-snippet text-on-surface-variant flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                        CONFIDENCE: HIGH
+                    </span>
+</div>
+<div class="flex flex-col p-12 flex-grow items-center justify-center relative z-10">
+<div class="text-center flex flex-col items-center gap-6 relative">
+<!-- Decorative brackets -->
+<span class="absolute -left-12 top-1/2 -translate-y-1/2 font-headline-lg text-[120px] text-outline-variant opacity-30 group-hover:text-primary transition-colors duration-500">[</span>
+<span class="absolute -right-12 top-1/2 -translate-y-1/2 font-headline-lg text-[120px] text-outline-variant opacity-30 group-hover:text-primary transition-colors duration-500">]</span>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">PREDICTION RESULT</h2>
+<!-- The massive glowy text -->
+<div class="relative">
+<span class="font-headline-lg text-[80px] md:text-[120px] leading-none text-primary font-bold tracking-tighter drop-shadow-[0_0_25px_rgba(0,230,57,0.8)]">APPROVED</span>
+</div>
+<!-- Progress Bar Style -->
+<div class="flex flex-col w-full max-w-md gap-2 mt-8">
+<div class="flex justify-between items-end">
+<span class="font-code-snippet text-code-snippet text-on-surface-variant">APPROVAL_PROBABILITY</span>
+<span class="font-headline-sm text-headline-sm text-primary">82.4%</span>
+</div>
+<div class="font-code-snippet text-code-snippet text-primary tracking-tighter text-xl truncate relative overflow-hidden" title="████████████████████████████████████████">
+                                ████████████████████████████████ <span class="text-surface-variant">████████</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Details & Actions Column -->
+<div class="lg:col-span-4 flex flex-col gap-gutter h-full">
+<!-- Model Details Card -->
+<div class="flex flex-col border border-outline-variant bg-surface-container">
+<div class="px-4 py-2 border-b border-outline-variant bg-surface-container-high">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">EXECUTION_PARAMETERS</span>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant">ALGORITHM</span>
+<span class="font-body-lg text-body-lg text-on-surface">K-Nearest Neighbors (KNN)</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant">K_VALUE (NEIGHBORS)</span>
+<div class="flex items-center gap-3">
+<span class="font-headline-md text-headline-md text-primary">5</span>
+<div class="flex-grow border-t border-dashed border-outline-variant"></div>
+<span class="font-code-snippet text-code-snippet text-on-surface-variant">OPTIMAL</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface-variant">DISTANCE_METRIC</span>
+<span class="font-code-snippet text-code-snippet text-on-surface">Euclidean (L2)</span>
+</div>
+</div>
+</div>
+<!-- Actions Card -->
+<div class="flex flex-col border border-outline-variant bg-surface-container flex-grow justify-end">
+<div class="px-4 py-2 border-b border-outline-variant bg-surface-container-high">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">AVAILABLE_ACTIONS</span>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<button class="w-full py-4 bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-primary-fixed hover:shadow-[0_0_15px_rgba(0,230,57,0.5)] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-[20px] group-hover:-rotate-90 transition-transform">refresh</span>
+                            [ NEW PREDICTION ]
+                        </button>
+<button class="w-full py-4 border border-primary text-primary bg-transparent font-headline-sm text-headline-sm uppercase tracking-wider hover:bg-primary/10 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                            [ VIEW MODEL ]
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Logs (Footer area) -->
+<div class="mt-auto border-t border-outline-variant pt-6 flex flex-col font-code-snippet text-code-snippet text-on-surface-variant gap-1 h-32 overflow-hidden relative" id="terminal-logs">
+<!-- Fade out mask -->
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10 pointer-events-none"></div>
+<div class="flex items-center gap-2 opacity-50">
+<span class="text-primary">></span>
+<span>INITIALIZING_KERNEL...</span>
+<span class="text-on-surface ml-auto">[OK]</span>
+</div>
+<div class="flex items-center gap-2 opacity-60">
+<span class="text-primary">></span>
+<span>DATASET_LOADED: 'historical_loans_v4.csv' (14,293 records)</span>
+<span class="text-on-surface ml-auto">[OK]</span>
+</div>
+<div class="flex items-center gap-2 opacity-70">
+<span class="text-primary">></span>
+<span>FEATURES_SCALED: StandardScaler applied (mean=0, std=1)</span>
+<span class="text-on-surface ml-auto">[OK]</span>
+</div>
+<div class="flex items-center gap-2 opacity-80">
+<span class="text-primary">></span>
+<span>KNN_MODEL_LOADED: k=5, weights='uniform'</span>
+<span class="text-on-surface ml-auto">[OK]</span>
+</div>
+<div class="flex items-center gap-2 opacity-100 animate-pulse">
+<span class="text-primary">></span>
+<span class="text-on-surface">PREDICTION_READY</span>
+<span class="w-2 h-4 bg-primary inline-block ml-1 animate-[ping_1s_infinite]"></span>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Subtle interaction: flicker the approved text on load
+    document.addEventListener('DOMContentLoaded', () => {
+        const approvedText = document.querySelector('.drop-shadow-\\[0_0_25px_rgba\\(0\\,230\\,57\\,0\\.8\\)\\]');
+        if (approvedText) {
+            let opacity = 0;
+            const flickerInterval = setInterval(() => {
+                opacity = Math.random() > 0.5 ? 1 : 0.7;
+                approvedText.style.opacity = opacity;
+            }, 100);
+
+            setTimeout(() => {
+                clearInterval(flickerInterval);
+                approvedText.style.opacity = 1;
+            }, 800);
+        }
+    });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-8"><div class="px-margin-desktop flex justify-between items-center opacity-50"><span class="font-code-snippet text-code-snippet">CORE_KERNEL_V1.0.4</span><span class="font-code-snippet text-code-snippet">© 2024 TERMINAL_SYSTEMS</span></div></footer></body></html>

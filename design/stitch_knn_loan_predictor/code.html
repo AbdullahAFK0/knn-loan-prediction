@@ -1,0 +1,115 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#84967e","surface-container-highest":"#353534","on-secondary-container":"#8ac38a","on-tertiary-container":"#626060","on-background":"#e5e2e1","on-error-container":"#ffdad6","surface-container":"#201f1f","tertiary-container":"#dfdcdb","primary-fixed-dim":"#00e639","surface":"#131313","surface-tint":"#00e639","surface-variant":"#353534","tertiary":"#fcf8f8","on-tertiary-fixed":"#1c1b1b","on-primary-container":"#007117","on-error":"#690005","inverse-surface":"#e5e2e1","outline-variant":"#3b4b37","secondary-fixed-dim":"#9bd59a","on-secondary":"#003910","primary-fixed":"#72ff70","secondary-container":"#1b5124","secondary-fixed":"#b6f1b5","on-secondary-fixed":"#002107","on-primary":"#003907","on-primary-fixed":"#002203","error":"#ffb4ab","primary-container":"#00ff41","on-tertiary":"#313030","surface-container-low":"#1c1b1b","surface-bright":"#393939","primary":"#ebffe2","surface-dim":"#131313","on-primary-fixed-variant":"#00530e","inverse-primary":"#006e16","on-secondary-fixed-variant":"#1b5124","surface-container-high":"#2a2a2a","tertiary-fixed-dim":"#c9c6c5","on-tertiary-fixed-variant":"#474646","tertiary-fixed":"#e5e2e1","inverse-on-surface":"#313030","error-container":"#93000a","background":"#131313","secondary":"#9bd59a","surface-container-lowest":"#0e0e0e","on-surface-variant":"#b9ccb2","on-surface":"#e5e2e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","container-max":"1440px","gutter":"16px","unit":"4px","margin-desktop":"32px"},"fontFamily":{"headline-md":["JetBrains Mono"],"body-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["JetBrains Mono"],"headline-sm":["JetBrains Mono"],"code-snippet":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><span class="font-headline-sm text-headline-sm tracking-tighter text-on-surface">KNN_LOAN_PREDICTOR</span><div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-primary uppercase">System Online</span></div></div><nav class="hidden md:flex items-center gap-gutter h-full" data-active-classes="text-primary border-b-2 border-primary"><a aria-current="page" class="h-full flex items-center px-2 font-label-lg transition-colors text-primary border-b-2 border-primary" data-path="home" href="#">HOME</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="prediction" href="#">PREDICTION</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="model" href="#">MODEL</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="results" href="#">RESULTS</a></nav><div><button class="font-label-lg text-label-lg bg-secondary-container text-on-secondary-container border border-secondary px-6 py-2 hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">[ RUN PREDICTION ]</button></div></div></header><main class="w-full pt-16 min-h-screen bg-background"><div class="flex flex-col w-full">
+<section class="relative w-full min-h-[70vh] flex flex-col items-center justify-center border-b border-outline-variant bg-surface px-margin-mobile md:px-margin-desktop py-24 overflow-hidden">
+<div aria-hidden="true" class="absolute inset-0 pointer-events-none opacity-[0.03] select-none font-code-snippet text-code-snippet text-primary flex flex-wrap overflow-hidden" id="matrix-bg"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl w-full flex flex-col items-start md:items-center text-left md:text-center space-y-6">
+<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high border border-outline-variant mb-4">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="font-code-snippet text-code-snippet text-on-surface-variant uppercase tracking-widest">> MACHINE_LEARNING_SYSTEM_INITIALIZED</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:text-[56px] md:leading-[64px] text-on-surface uppercase tracking-tighter">
+        LOAN APPROVAL <br class="hidden md:block"/>PREDICTION <span class="animate-[pulse_1s_infinite] text-primary">_</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto border-l-2 border-primary pl-4 md:border-none md:pl-0">
+        Use a K-Nearest Neighbors machine learning model to predict whether a loan application is likely to be approved or rejected. High-stakes financial modeling meets kernel-level precision.
+      </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-8 w-full sm:w-auto">
+<button class="font-label-lg text-label-lg bg-primary text-on-primary px-8 py-4 hover:brightness-125 transition-all shadow-[0_0_15px_rgba(0,230,57,0.3)] hover:shadow-[0_0_25px_rgba(0,230,57,0.5)] flex items-center justify-center gap-2 group">
+          [ START PREDICTION ]
+          <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="font-label-lg text-label-lg bg-transparent text-primary border border-primary px-8 py-4 hover:bg-primary/10 transition-colors flex items-center justify-center gap-2">
+          [ VIEW MODEL ]
+          <span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+</div>
+</div>
+</section>
+<section class="w-full bg-background px-margin-mobile md:px-margin-desktop py-16 md:py-24 border-b border-outline-variant">
+<div class="max-w-container-max mx-auto">
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight">SYSTEM STATUS</h2>
+</div>
+<span class="font-code-snippet text-code-snippet text-on-surface-variant hidden md:block">UPDATE: T-MINUS 0.00ms</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-outline-variant">
+<div class="group relative bg-surface p-6 border-b border-r border-outline-variant hover:bg-surface-container-high transition-colors overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">ENGINE</span>
+<span class="material-symbols-outlined text-primary opacity-50 group-hover:opacity-100 transition-opacity">memory</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mb-2">KNN</div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">K-Nearest Neighbors Algorithm</div>
+</div>
+<div class="group relative bg-surface p-6 border-b border-r border-outline-variant hover:bg-surface-container-high transition-colors overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">DATASET</span>
+<span class="material-symbols-outlined text-primary opacity-50 group-hover:opacity-100 transition-opacity">database</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mb-2">614 <span class="text-on-surface-variant text-sm font-normal">RECORDS</span></div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">Training & Validation Split</div>
+</div>
+<div class="group relative bg-surface p-6 border-b border-r border-outline-variant hover:bg-surface-container-high transition-colors overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">FEATURES</span>
+<span class="material-symbols-outlined text-primary opacity-50 group-hover:opacity-100 transition-opacity">account_tree</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mb-2">11 <span class="text-on-surface-variant text-sm font-normal">VARIABLES</span></div>
+<div class="font-code-snippet text-code-snippet text-on-surface-variant">Income, Credit History, etc.</div>
+</div>
+<div class="group relative bg-surface-container p-6 border-b border-r border-outline-variant hover:bg-surface-container-high transition-colors overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="relative flex justify-between items-start mb-6">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">STATUS</span>
+<span class="material-symbols-outlined text-primary animate-pulse">check_circle</span>
+</div>
+<div class="relative font-headline-md text-headline-md text-primary mb-2">ONLINE</div>
+<div class="relative font-code-snippet text-code-snippet text-on-surface-variant">Ready for Input</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple matrix background effect
+  document.addEventListener('DOMContentLoaded', () => {
+    const bg = document.getElementById('matrix-bg');
+    if (!bg) return;
+    
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~';
+    let text = '';
+    
+    // Fill background with random chars
+    for (let i = 0; i < 2000; i++) {
+      text += chars.charAt(Math.floor(Math.random() * chars.length));
+      if (Math.random() > 0.95) text += '<br/>';
+    }
+    
+    bg.innerHTML = text;
+
+    // Slowly scramble some characters over time
+    setInterval(() => {
+        const textNodes = bg.childNodes;
+        for(let j=0; j<50; j++) {
+            const nodeIndex = Math.floor(Math.random() * textNodes.length);
+            const node = textNodes[nodeIndex];
+            if(node.nodeType === Node.TEXT_NODE) {
+                const str = node.textContent;
+                if(str.length > 0) {
+                     const charIndex = Math.floor(Math.random() * str.length);
+                     const newChar = chars.charAt(Math.floor(Math.random() * chars.length));
+                     node.textContent = str.substring(0, charIndex) + newChar + str.substring(charIndex + 1);
+                }
+            }
+        }
+    }, 100);
+  });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-8"><div class="px-margin-desktop flex justify-between items-center opacity-50"><span class="font-code-snippet text-code-snippet">CORE_KERNEL_V1.0.4</span><span class="font-code-snippet text-code-snippet">© 2024 TERMINAL_SYSTEMS</span></div></footer></body></html>

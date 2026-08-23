@@ -1,0 +1,247 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#84967e","surface-container-highest":"#353534","on-secondary-container":"#8ac38a","on-tertiary-container":"#626060","on-background":"#e5e2e1","on-error-container":"#ffdad6","surface-container":"#201f1f","tertiary-container":"#dfdcdb","primary-fixed-dim":"#00e639","surface":"#131313","surface-tint":"#00e639","surface-variant":"#353534","tertiary":"#fcf8f8","on-tertiary-fixed":"#1c1b1b","on-primary-container":"#007117","on-error":"#690005","inverse-surface":"#e5e2e1","outline-variant":"#3b4b37","secondary-fixed-dim":"#9bd59a","on-secondary":"#003910","primary-fixed":"#72ff70","secondary-container":"#1b5124","secondary-fixed":"#b6f1b5","on-secondary-fixed":"#002107","on-primary":"#003907","on-primary-fixed":"#002203","error":"#ffb4ab","primary-container":"#00ff41","on-tertiary":"#313030","surface-container-low":"#1c1b1b","surface-bright":"#393939","primary":"#ebffe2","surface-dim":"#131313","on-primary-fixed-variant":"#00530e","inverse-primary":"#006e16","on-secondary-fixed-variant":"#1b5124","surface-container-high":"#2a2a2a","tertiary-fixed-dim":"#c9c6c5","on-tertiary-fixed-variant":"#474646","tertiary-fixed":"#e5e2e1","inverse-on-surface":"#313030","error-container":"#93000a","background":"#131313","secondary":"#9bd59a","surface-container-lowest":"#0e0e0e","on-surface-variant":"#b9ccb2","on-surface":"#e5e2e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","container-max":"1440px","gutter":"16px","unit":"4px","margin-desktop":"32px"},"fontFamily":{"headline-md":["JetBrains Mono"],"body-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["JetBrains Mono"],"headline-sm":["JetBrains Mono"],"code-snippet":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><span class="font-headline-sm text-headline-sm tracking-tighter text-on-surface">KNN_LOAN_PREDICTOR</span><div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-primary uppercase">System Online</span></div></div><nav class="hidden md:flex items-center gap-gutter h-full" data-active-classes="text-primary border-b-2 border-primary"><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">HOME</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="prediction" href="#">PREDICTION</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="model" href="#">MODEL</a><a aria-current="page" class="h-full flex items-center px-2 font-label-lg transition-colors text-primary border-b-2 border-primary" data-path="results" href="#">RESULTS</a></nav><div><button class="font-label-lg text-label-lg bg-secondary-container text-on-secondary-container border border-secondary px-6 py-2 hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">[ RUN PREDICTION ]</button></div></div></header><main class="w-full pt-16 min-h-screen bg-background"><div class="flex flex-col w-full">
+<div class="px-margin-desktop py-8 border-b border-outline-variant flex justify-between items-end relative overflow-hidden">
+<div class="absolute right-0 top-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 space-y-2">
+<div class="font-code-snippet text-code-snippet text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+        SYS_LOG_V2.0.4
+      </div>
+<h1 class="font-headline-lg text-headline-lg tracking-tighter uppercase text-on-surface">
+<span class="text-primary">></span> MODEL_ANALYTICS
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+        Performance diagnostics and evaluation metrics for the K-Nearest Neighbors predictive kernel. Target parameter optimization successful.
+      </p>
+</div>
+<div class="relative z-10 flex gap-4 hidden md:flex">
+<div class="flex flex-col items-end border-r border-outline-variant pr-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Training Split</span>
+<span class="font-code-snippet text-code-snippet text-on-surface">80/20</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Dataset Size</span>
+<span class="font-code-snippet text-code-snippet text-on-surface">N=4,892</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-outline-variant">
+<div class="col-span-1 lg:col-span-4 bg-surface-container border-r border-outline-variant p-margin-desktop flex flex-col justify-center min-h-[300px] relative group">
+<div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500 pointer-events-none"></div>
+<div class="border-b border-outline-variant pb-2 mb-8 flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">MODEL ACCURACY</h2>
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div class="flex-grow flex flex-col justify-center items-center">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-110"></div>
+<span class="font-headline-lg text-[72px] leading-[80px] font-bold text-primary tracking-tighter relative z-10 drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]">
+            80.49<span class="text-[32px]">%</span>
+</span>
+</div>
+<div class="mt-8 flex items-center gap-2 font-code-snippet text-code-snippet text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+          Baseline threshold exceeded (+12.4%)
+        </div>
+</div>
+</div>
+<div class="col-span-1 lg:col-span-8 bg-surface p-margin-desktop min-h-[400px] flex flex-col relative overflow-hidden">
+<div class="absolute right-0 bottom-0 w-[500px] h-[500px] bg-secondary-fixed/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen"></div>
+<div class="border-b border-outline-variant pb-2 mb-8 flex justify-between items-center relative z-10">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">ACCURACY VS K-VALUE</h2>
+<div class="font-label-md text-label-md flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-[2px] bg-primary"></div>
+<span class="text-on-surface-variant">Validation</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-[2px] bg-secondary-fixed-dim"></div>
+<span class="text-on-surface-variant">Training</span>
+</div>
+</div>
+</div>
+<div class="flex-grow relative z-10 flex items-center justify-center p-4">
+<div class="w-full h-full min-h-[250px] relative border-l border-b border-outline-variant">
+<div class="absolute left-0 bottom-0 w-full h-full flex flex-col justify-between pt-4 pb-0 pointer-events-none">
+<div class="w-full border-t border-outline-variant/30 flex items-center justify-end px-2"><span class="font-code-snippet text-[10px] text-on-surface-variant -translate-y-2">85%</span></div>
+<div class="w-full border-t border-outline-variant/30 flex items-center justify-end px-2"><span class="font-code-snippet text-[10px] text-on-surface-variant -translate-y-2">80%</span></div>
+<div class="w-full border-t border-outline-variant/30 flex items-center justify-end px-2"><span class="font-code-snippet text-[10px] text-on-surface-variant -translate-y-2">75%</span></div>
+<div class="w-full border-t border-outline-variant/30 flex items-center justify-end px-2"><span class="font-code-snippet text-[10px] text-on-surface-variant -translate-y-2">70%</span></div>
+</div>
+<div class="absolute left-0 bottom-0 w-full flex justify-between px-4 translate-y-6">
+<span class="font-code-snippet text-[10px] text-on-surface-variant">1</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">3</span>
+<span class="font-code-snippet text-[10px] text-primary font-bold">5</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">7</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">9</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">11</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">13</span>
+<span class="font-code-snippet text-[10px] text-on-surface-variant">15</span>
+</div>
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<!-- Training Line -->
+<polyline class="opacity-70" fill="none" points="0,90 14,75 28,60 42,55 57,52 71,50 85,49 100,48" stroke="var(--secondary-fixed-dim)" stroke-dasharray="4,2" stroke-width="1.5"></polyline>
+<!-- Validation Line -->
+<defs>
+<filter id="glow">
+<fegaussianblur result="coloredBlur" stddeviation="1.5"></fegaussianblur>
+<femerge>
+<femergenode in="coloredBlur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+</defs>
+<polyline fill="none" filter="url(#glow)" points="0,60 14,45 28,15 42,25 57,30 71,32 85,35 100,38" stroke="var(--primary)" stroke-width="2"></polyline>
+<!-- K=5 Highlight -->
+<line class="opacity-50" stroke="var(--primary)" stroke-dasharray="2,2" stroke-width="1" x1="28" x2="28" y1="0" y2="100"></line>
+<circle cx="28" cy="15" fill="var(--surface)" filter="url(#glow)" r="3" stroke="var(--primary)" stroke-width="2"></circle>
+<!-- Other Points -->
+<circle cx="0" cy="60" fill="var(--primary)" r="1.5"></circle>
+<circle cx="14" cy="45" fill="var(--primary)" r="1.5"></circle>
+<circle cx="42" cy="25" fill="var(--primary)" r="1.5"></circle>
+<circle cx="57" cy="30" fill="var(--primary)" r="1.5"></circle>
+<circle cx="71" cy="32" fill="var(--primary)" r="1.5"></circle>
+<circle cx="85" cy="35" fill="var(--primary)" r="1.5"></circle>
+<circle cx="100" cy="38" fill="var(--primary)" r="1.5"></circle>
+</svg>
+<div class="absolute top-[10%] left-[28%] -translate-x-1/2 -translate-y-full pb-2">
+<div class="bg-surface-container-high border border-primary px-2 py-1 flex flex-col items-center shadow-[0_0_10px_rgba(0,255,65,0.2)]">
+<span class="font-code-snippet text-[10px] text-on-surface">K=5 (Optimal)</span>
+<span class="font-code-snippet text-[12px] text-primary font-bold">80.49%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-0 border-b border-outline-variant bg-surface">
+<div class="p-margin-desktop border-r border-outline-variant flex flex-col">
+<div class="border-b border-outline-variant pb-2 mb-8 flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">CONFUSION MATRIX</h2>
+<span class="font-code-snippet text-[10px] text-on-surface-variant uppercase border border-outline-variant px-2 py-1">Test Set N=979</span>
+</div>
+<div class="flex-grow flex items-center justify-center">
+<div class="flex flex-col">
+<div class="flex justify-center mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Predicted Class</span>
+</div>
+<div class="flex">
+<div class="flex items-center justify-center mr-4 [writing-mode:vertical-rl] rotate-180">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Actual Class</span>
+</div>
+<div class="flex flex-col border border-outline-variant">
+<!-- Header Row -->
+<div class="flex border-b border-outline-variant bg-surface-container-low">
+<div class="w-32 h-10 border-r border-outline-variant flex items-center justify-center"></div>
+<div class="w-40 h-10 border-r border-outline-variant flex items-center justify-center">
+<span class="font-code-snippet text-code-snippet text-on-surface">Rejected (0)</span>
+</div>
+<div class="w-40 h-10 flex items-center justify-center">
+<span class="font-code-snippet text-code-snippet text-on-surface">Approved (1)</span>
+</div>
+</div>
+<!-- Row 1 -->
+<div class="flex border-b border-outline-variant">
+<div class="w-32 h-32 border-r border-outline-variant bg-surface-container-low flex items-center justify-center">
+<span class="font-code-snippet text-code-snippet text-on-surface">Rejected (0)</span>
+</div>
+<div class="w-40 h-32 border-r border-outline-variant bg-surface-container relative group overflow-hidden flex flex-col items-center justify-center transition-colors hover:bg-surface-container-high">
+<div class="absolute top-2 left-2 font-label-md text-[10px] text-on-surface-variant uppercase">True Negative</div>
+<span class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_8px_rgba(0,255,65,0.3)]">412</span>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<div class="w-40 h-32 bg-surface-container relative group overflow-hidden flex flex-col items-center justify-center transition-colors hover:bg-surface-container-high">
+<div class="absolute top-2 left-2 font-label-md text-[10px] text-on-surface-variant uppercase">False Positive</div>
+<span class="font-headline-lg text-headline-lg text-error drop-shadow-[0_0_8px_rgba(255,180,171,0.2)]">89</span>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-error scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="flex">
+<div class="w-32 h-32 border-r border-outline-variant bg-surface-container-low flex items-center justify-center">
+<span class="font-code-snippet text-code-snippet text-on-surface">Approved (1)</span>
+</div>
+<div class="w-40 h-32 border-r border-outline-variant bg-surface-container relative group overflow-hidden flex flex-col items-center justify-center transition-colors hover:bg-surface-container-high">
+<div class="absolute top-2 left-2 font-label-md text-[10px] text-on-surface-variant uppercase">False Negative</div>
+<span class="font-headline-lg text-headline-lg text-error drop-shadow-[0_0_8px_rgba(255,180,171,0.2)]">102</span>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-error scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+<div class="w-40 h-32 bg-surface-container relative group overflow-hidden flex flex-col items-center justify-center transition-colors hover:bg-surface-container-high">
+<div class="absolute top-2 left-2 font-label-md text-[10px] text-on-surface-variant uppercase">True Positive</div>
+<span class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_8px_rgba(0,255,65,0.3)]">376</span>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-margin-desktop flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 opacity-5">
+<span class="material-symbols-outlined text-[300px]">memory</span>
+</div>
+<div>
+<div class="border-b border-outline-variant pb-2 mb-6 flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">CLASSIFICATION REPORT</h2>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col font-code-snippet text-[13px]">
+<div class="flex border-b border-outline-variant/50 pb-2 text-on-surface-variant uppercase">
+<div class="w-1/3">Metric</div>
+<div class="w-1/3 text-right">Rejected (0)</div>
+<div class="w-1/3 text-right">Approved (1)</div>
+</div>
+<div class="flex py-3 border-b border-outline-variant/30 hover:bg-surface-container transition-colors group">
+<div class="w-1/3 text-on-surface group-hover:text-primary transition-colors">> Precision</div>
+<div class="w-1/3 text-right text-on-surface">0.82</div>
+<div class="w-1/3 text-right text-on-surface">0.79</div>
+</div>
+<div class="flex py-3 border-b border-outline-variant/30 hover:bg-surface-container transition-colors group">
+<div class="w-1/3 text-on-surface group-hover:text-primary transition-colors">> Recall</div>
+<div class="w-1/3 text-right text-on-surface">0.80</div>
+<div class="w-1/3 text-right text-on-surface">0.81</div>
+</div>
+<div class="flex py-3 border-b border-outline-variant/30 hover:bg-surface-container transition-colors group">
+<div class="w-1/3 text-on-surface group-hover:text-primary transition-colors">> F1-Score</div>
+<div class="w-1/3 text-right text-on-surface">0.81</div>
+<div class="w-1/3 text-right text-on-surface">0.80</div>
+</div>
+<div class="flex py-3 hover:bg-surface-container transition-colors group">
+<div class="w-1/3 text-on-surface group-hover:text-primary transition-colors">> Support</div>
+<div class="w-1/3 text-right text-on-surface-variant">501</div>
+<div class="w-1/3 text-right text-on-surface-variant">478</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-surface p-4 border border-outline-variant flex gap-4 items-center">
+<span class="material-symbols-outlined text-primary animate-pulse">downloading</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface uppercase">Export Metrics Report</span>
+<span class="font-code-snippet text-[11px] text-on-surface-variant">JSON / CSV Format available</span>
+</div>
+<button class="ml-auto font-label-md text-label-md bg-transparent border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-on-primary transition-all">
+           EXPORT DATA
+         </button>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop py-6 bg-surface-container-highest flex gap-8 items-center border-b border-outline-variant">
+<div class="flex flex-col">
+<span class="font-code-snippet text-code-snippet text-primary">> ANALYTICS_GENERATED</span>
+<span class="font-code-snippet text-[11px] text-on-surface-variant">TIMESTAMP: 2024-10-24 14:02:45 UTC</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-code-snippet text-code-snippet text-primary">> EPOCHS: 100</span>
+<span class="font-code-snippet text-[11px] text-on-surface-variant">CONVERGENCE ACHIEVED</span>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-code-snippet text-code-snippet text-primary">> DISTANCE_METRIC: MINKOWSKI</span>
+<span class="font-code-snippet text-[11px] text-on-surface-variant">P=2 (EUCLIDEAN)</span>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-8"><div class="px-margin-desktop flex justify-between items-center opacity-50"><span class="font-code-snippet text-code-snippet">CORE_KERNEL_V1.0.4</span><span class="font-code-snippet text-code-snippet">© 2024 TERMINAL_SYSTEMS</span></div></footer></body></html>

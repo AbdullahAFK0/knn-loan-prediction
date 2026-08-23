@@ -1,0 +1,167 @@
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#84967e","surface-container-highest":"#353534","on-secondary-container":"#8ac38a","on-tertiary-container":"#626060","on-background":"#e5e2e1","on-error-container":"#ffdad6","surface-container":"#201f1f","tertiary-container":"#dfdcdb","primary-fixed-dim":"#00e639","surface":"#131313","surface-tint":"#00e639","surface-variant":"#353534","tertiary":"#fcf8f8","on-tertiary-fixed":"#1c1b1b","on-primary-container":"#007117","on-error":"#690005","inverse-surface":"#e5e2e1","outline-variant":"#3b4b37","secondary-fixed-dim":"#9bd59a","on-secondary":"#003910","primary-fixed":"#72ff70","secondary-container":"#1b5124","secondary-fixed":"#b6f1b5","on-secondary-fixed":"#002107","on-primary":"#003907","on-primary-fixed":"#002203","error":"#ffb4ab","primary-container":"#00ff41","on-tertiary":"#313030","surface-container-low":"#1c1b1b","surface-bright":"#393939","primary":"#ebffe2","surface-dim":"#131313","on-primary-fixed-variant":"#00530e","inverse-primary":"#006e16","on-secondary-fixed-variant":"#1b5124","surface-container-high":"#2a2a2a","tertiary-fixed-dim":"#c9c6c5","on-tertiary-fixed-variant":"#474646","tertiary-fixed":"#e5e2e1","inverse-on-surface":"#313030","error-container":"#93000a","background":"#131313","secondary":"#9bd59a","surface-container-lowest":"#0e0e0e","on-surface-variant":"#b9ccb2","on-surface":"#e5e2e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-mobile":"16px","container-max":"1440px","gutter":"16px","unit":"4px","margin-desktop":"32px"},"fontFamily":{"headline-md":["JetBrains Mono"],"body-lg":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-md":["JetBrains Mono"],"headline-sm":["JetBrains Mono"],"code-snippet":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"code-snippet":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant"><div class="h-16 w-full px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-4"><span class="font-headline-sm text-headline-sm tracking-tighter text-on-surface">KNN_LOAN_PREDICTOR</span><div class="flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-primary uppercase">System Online</span></div></div><nav class="hidden md:flex items-center gap-gutter h-full" data-active-classes="text-primary border-b-2 border-primary"><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">HOME</a><a aria-current="page" class="h-full flex items-center px-2 font-label-lg transition-colors text-primary border-b-2 border-primary" data-path="prediction" href="#">PREDICTION</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="model" href="#">MODEL</a><a class="h-full flex items-center px-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors" data-path="results" href="#">RESULTS</a></nav><div><button class="font-label-lg text-label-lg bg-secondary-container text-on-secondary-container border border-secondary px-6 py-2 hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">[ RUN PREDICTION ]</button></div></div></header><main class="w-full pt-16 min-h-screen bg-background"><div class="flex flex-col w-full">
+<div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-margin-desktop relative">
+<!-- Decorative Corner Terminal Text -->
+<div class="absolute top-8 left-margin-mobile md:left-margin-desktop font-code-snippet text-code-snippet text-primary opacity-60 pointer-events-none select-none">
+            > PREPROCESSING_READY<span class="animate-pulse">_</span>
+</div>
+<div class="absolute bottom-8 right-margin-mobile md:right-margin-desktop font-code-snippet text-code-snippet text-primary opacity-60 pointer-events-none select-none text-right">
+            > WAITING_FOR_INPUT<br/>
+            SYS.MEM: OK
+        </div>
+<!-- Main Form Container -->
+<div class="w-full md:w-8/12 lg:w-6/12 mx-auto mt-16 flex flex-col gap-8">
+<!-- Header -->
+<div class="flex flex-col gap-2">
+<h1 class="font-headline-lg text-headline-lg text-primary uppercase tracking-tighter mix-blend-screen">
+                    > LOAN_PREDICTION
+                </h1>
+<p class="font-code-snippet text-code-snippet text-on-surface-variant uppercase border-l-2 border-primary pl-3 ml-1">
+                    Enter applicant information to execute the prediction model.
+                </p>
+</div>
+<!-- The Form Box -->
+<form class="w-full bg-surface-container border border-primary p-1 flex flex-col gap-0 relative shadow-[0_0_20px_rgba(0,230,57,0.05)]" id="prediction-form">
+<!-- Section 1: Applicant Info -->
+<div class="w-full bg-surface border-b border-outline-variant p-6 flex flex-col gap-6">
+<div class="font-label-lg text-label-lg text-primary uppercase flex items-center gap-2">
+<span class="w-2 h-2 bg-primary"></span>
+                        [01] APPLICANT_INFORMATION
+                    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> GENDER</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="Male">MALE</option>
+<option value="Female">FEMALE</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> MARRIED</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="Yes">YES</option>
+<option value="No">NO</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> DEPENDENTS</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3+">3+</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> EDUCATION</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="Graduate">GRADUATE</option>
+<option value="Not Graduate">NOT_GRADUATE</option>
+</select>
+</div>
+<div class="flex flex-col gap-1 md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface uppercase">> SELF_EMPLOYED</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="No">NO</option>
+<option value="Yes">YES</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Section 2: Financial Info -->
+<div class="w-full bg-surface border-b border-outline-variant p-6 flex flex-col gap-6">
+<div class="font-label-lg text-label-lg text-primary uppercase flex items-center gap-2">
+<span class="w-2 h-2 bg-primary"></span>
+                        [02] FINANCIAL_DATA
+                    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> APPLICANT_INCOME ($)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors placeholder:text-outline-variant" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> CO_APPLICANT_INCOME ($)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors placeholder:text-outline-variant" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> LOAN_AMOUNT ($K)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors placeholder:text-outline-variant" placeholder="0.00" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> LOAN_AMOUNT_TERM (MOS)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors placeholder:text-outline-variant" placeholder="360" type="number"/>
+</div>
+</div>
+</div>
+<!-- Section 3: Credit & Property -->
+<div class="w-full bg-surface p-6 flex flex-col gap-6">
+<div class="font-label-lg text-label-lg text-primary uppercase flex items-center gap-2">
+<span class="w-2 h-2 bg-primary"></span>
+                        [03] CREDIT_AND_PROPERTY
+                    </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> CREDIT_HISTORY</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="1.0">1.0 (MEETS_GUIDELINES)</option>
+<option value="0.0">0.0 (DOES_NOT_MEET)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase">> PROPERTY_AREA</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant text-primary font-code-snippet text-code-snippet p-2 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none rounded-none transition-colors">
+<option value="Urban">URBAN</option>
+<option value="Semiurban">SEMI_URBAN</option>
+<option value="Rural">RURAL</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-6 uppercase border-none hover:bg-primary-fixed hover:shadow-[0_0_15px_rgba(0,230,57,0.4)] transition-all flex items-center justify-center gap-4 group" id="execute-btn" type="button">
+<span class="opacity-50 group-hover:opacity-100 transition-opacity">[</span>
+                    EXECUTE PREDICTION
+                    <span class="opacity-50 group-hover:opacity-100 transition-opacity">]</span>
+</button>
+</form>
+<!-- Terminal Output Simulation (Hidden by default) -->
+<div class="hidden w-full bg-[#0a0a0a] border border-outline-variant p-4 font-code-snippet text-code-snippet text-primary h-32 overflow-y-auto flex-col gap-1" id="terminal-output">
+<div>> INITIALIZING NEURAL NET...</div>
+<div class="animate-pulse">> AWAITING RESPONSE...</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    document.getElementById('execute-btn').addEventListener('click', function() {
+        const terminal = document.getElementById('terminal-output');
+        terminal.classList.remove('hidden');
+        terminal.classList.add('flex');
+        
+        let outputLines = [
+            "> COMPILING_FEATURES...",
+            "> TENSOR_MAPPING: OK",
+            "> RUNNING INFERENCE...",
+            "> OUTPUT_GENERATED_SUCCESSFULLY."
+        ];
+        
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < outputLines.length) {
+                const line = document.createElement('div');
+                line.textContent = outputLines[i];
+                terminal.appendChild(line);
+                terminal.scrollTop = terminal.scrollHeight;
+                i++;
+            } else {
+                clearInterval(interval);
+                const lastLine = document.createElement('div');
+                lastLine.className = "text-on-surface bg-primary text-on-primary px-2 inline-block mt-2";
+                lastLine.textContent = "RESULT: APPROVED (PROBABILITY: 0.89)";
+                terminal.appendChild(lastLine);
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+        }, 600);
+    });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant py-8"><div class="px-margin-desktop flex justify-between items-center opacity-50"><span class="font-code-snippet text-code-snippet">CORE_KERNEL_V1.0.4</span><span class="font-code-snippet text-code-snippet">© 2024 TERMINAL_SYSTEMS</span></div></footer></body></html>
