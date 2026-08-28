@@ -238,14 +238,13 @@ async def startup_event():
 # POST /predict
 # ============================================
 
-@app.post("/predict")
+@app.post("/api/predict")
 async def predict(data: LoanInput):
     if store.tuned_model is None:
         raise HTTPException(status_code=503, detail="Model not trained yet")
 
     # Build a DataFrame row matching the training features
     row = {
-        "Dependents": int(data.Dependents.replace("3+", "3")),
         "ApplicantIncome": data.ApplicantIncome,
         "CoapplicantIncome": data.CoapplicantIncome,
         "LoanAmount": data.LoanAmount,
@@ -288,7 +287,7 @@ async def predict(data: LoanInput):
 # GET /model-results
 # ============================================
 
-@app.get("/model-results")
+@app.get("/api/model-results")
 async def model_results():
     if store.tuned_model is None:
         raise HTTPException(status_code=503, detail="Model not trained yet")
