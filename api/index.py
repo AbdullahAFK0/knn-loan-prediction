@@ -148,7 +148,7 @@ def train_model():
     # ==========================================
     # 7 & 8. CREATE COMPLETE PIPELINE
     # ==========================================
-    knn = KNeighborsClassifier(n_neighbors=7, weights="distance")
+    knn = KNeighborsClassifier(n_neighbors=5, weights="uniform", metric="euclidean")
     model = Pipeline([
         ("preprocessor", preprocessor),
         ("knn", knn),
@@ -249,7 +249,7 @@ async def predict(data: LoanInput):
         "prediction": "Approved" if prediction == "Y" else "Rejected",
         "approval_score": approval_score,
         "rejection_score": rejection_score,
-        "k_value": 7,
+        "k_value": 5,
         "model": "K-Nearest Neighbors",
         "distance_metric": "Euclidean (L2)",
     }
@@ -273,11 +273,11 @@ async def model_results():
         "dataset_size": store.dataset_size,
         "train_size": store.train_size,
         "test_size": store.test_size,
-        "best_k": 7,
+        "best_k": 5,
         "best_cv_accuracy": None,
         "tuned_accuracy": store.accuracy,
         "default_accuracy": store.accuracy,
-        "k_experiment": {7: store.accuracy},
+        "k_experiment": {5: store.accuracy},
         "confusion_matrix": {
             "tn": store.tuned_cm[0][0],
             "fp": store.tuned_cm[0][1],
